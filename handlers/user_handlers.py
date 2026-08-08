@@ -11,15 +11,11 @@ user_search_results = {}
 @router.message(CommandStart())
 async def cmd_start(message: types.Message):
     text = (
-        "🎁 <b>Приветствую!</b>\n\n"
-        "Я бот для автоматического поиска NFT-подарков.\n\n"
-        "<b>Доступные команды:</b>\n"
+        "🎁 <b>Привет, любители подарков!</b>\n\n"
+        "Я автоматически ищу NFT-подарки по вашему запросу\n\n"
         "/search - Начать поиск подарков\n"
-        "/random - 30 рандомных юзеров (в разработке)\n\n"
-        "❤️ Сделано с любовью от mvpcrazy\n"
-        "🧑‍💻 Форум - https://lolz.live/members/3478629/"
     )
-    await message.answer(text, disable_web_page_preview=True)
+    await message.answer(text)
 
 @router.callback_query(F.data == "check_subscription")
 async def check_subscription_callback(query: types.CallbackQuery, bot: Bot):
