@@ -1,5 +1,4 @@
 import asyncio
-import os
 from datetime import datetime, timezone
 
 from supabase import Client, create_client
@@ -13,6 +12,7 @@ class SubscriptionService:
         return await asyncio.to_thread(fn)
 
     async def has_active_subscription(self, telegram_id: int) -> bool:
+
         def op():
             users = (
                 self.client
@@ -45,6 +45,7 @@ class SubscriptionService:
                 return False
 
             expires_at = subscriptions[0].get("expires_at")
+
             if not expires_at:
                 return False
 
