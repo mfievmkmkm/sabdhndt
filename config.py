@@ -1,4 +1,3 @@
-```python
 import os
 
 
@@ -31,4 +30,3 @@ PAYMENT_BOT_USERNAME: str = os.getenv(
     "PAYMENT_BOT_USERNAME",
     "vsdvscbot"
 )
-```
