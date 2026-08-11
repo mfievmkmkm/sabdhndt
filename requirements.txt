@@ -4,3 +4,4 @@ beautifulsoup4
 aiosqlite
 aiogram>=3.0.0
 aiohttp>=3.9.0
+supabase
