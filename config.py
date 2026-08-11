@@ -1,3 +1,34 @@
-BOT_TOKEN: str = "8701405543:AAF_CHElfbHSLKNLAmxwnonTiyqRDg7vXic" # Замените в кавычках (ИХ НЕ СТИРАТЬ!) на свой токен
+```python
+import os
 
-OWNER_ID: int = 1152087842 #Замените циферки на свой ID 
+
+# =========================
+# Telegram
+# =========================
+
+BOT_TOKEN: str = os.getenv("BOT_TOKEN", "")
+
+OWNER_ID: int = int(
+    os.getenv("OWNER_ID", "0")
+)
+
+
+# =========================
+# Gifts Intelligence
+# =========================
+
+SUPABASE_URL: str = os.getenv(
+    "SUPABASE_URL",
+    ""
+)
+
+SUPABASE_KEY: str = os.getenv(
+    "SUPABASE_KEY",
+    ""
+)
+
+PAYMENT_BOT_USERNAME: str = os.getenv(
+    "PAYMENT_BOT_USERNAME",
+    "vsdvscbot"
+)
+```
