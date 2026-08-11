@@ -1,32 +1,25 @@
 import os
 
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+OWNER_ID = int(os.getenv("OWNER_ID", "0"))
 
-# =========================
-# Telegram
-# =========================
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 
-BOT_TOKEN: str = os.getenv("BOT_TOKEN", "")
-
-OWNER_ID: int = int(
-    os.getenv("OWNER_ID", "0")
-)
+PAYMENT_BOT_USERNAME = os.getenv("PAYMENT_BOT_USERNAME")
 
 
-# =========================
-# Gifts Intelligence
-# =========================
+if not BOT_TOKEN:
+    raise RuntimeError("BOT_TOKEN is not set")
 
-SUPABASE_URL: str = os.getenv(
-    "SUPABASE_URL",
-    ""
-)
+if not OWNER_ID:
+    raise RuntimeError("OWNER_ID is not set")
 
-SUPABASE_KEY: str = os.getenv(
-    "SUPABASE_KEY",
-    ""
-)
+if not SUPABASE_URL:
+    raise RuntimeError("SUPABASE_URL is not set")
 
-PAYMENT_BOT_USERNAME: str = os.getenv(
-    "PAYMENT_BOT_USERNAME",
-    "vsdvscbot"
-)
+if not SUPABASE_KEY:
+    raise RuntimeError("SUPABASE_KEY is not set")
+
+if not PAYMENT_BOT_USERNAME:
+    raise RuntimeError("PAYMENT_BOT_USERNAME is not set")
